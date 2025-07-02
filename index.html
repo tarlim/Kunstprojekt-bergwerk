@@ -1,102 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kunst im Bergwerk</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icon.png" />
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./service-worker.js')
-          .then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
-</head>
-<body>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-      color: #333;
-    }
-
-    header {
-      background-color: #444;
-      color: #fff;
-      padding: 1em;
-      text-align: center;
-    }
-
-    main {
-      padding: 1em;
-    }
-
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    nav li {
-      margin: 0.5em 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #0077cc;
-      background-color: #fff;
-      padding: 0.5em;
-      display: block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #e0e0e0;
-    }
-
-    footer {
-      background-color: #444;
-      color: #fff;
-      text-align: center;
-      padding: 1em;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
+  <meta charset="UTF-8">
+  <title>Kunst im Bergwerk Steinebach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f2f2f2; color: #333; }
+    header { background-color: #444; color: #fff; padding: 1em; text-align: center; }
+    main { padding: 1em; }
+    nav ul { list-style-type: none; padding: 0; }
+    nav li { margin: 0.5em 0; }
+    nav a { text-decoration: none; color: #0077cc; background-color: #fff; padding: 0.5em; display: block; border: 1px solid #ccc; border-radius: 4px; transition: background-color 0.3s; }
+    nav a:hover { background-color: #e0e0e0; }
+    footer { background-color: #444; color: #fff; text-align: center; padding: 1em; position: fixed; width: 100%; bottom: 0; }
   </style>
 </head>
 <body>
   <header>
     <h1>Kunst im Bergwerk Steinebach</h1>
-    <p>Offline-Ausstellung</p>
   </header>
-
   <main>
-    <section id="info">
-      <p>Willkommen! Diese App funktioniert auch ohne Internet. Bitte wählen Sie unten ein Kunstwerk aus.</p>
-    </section>
-
+    <p>Willkommen! Diese App funktioniert auch ohne Internet. Bitte wählen Sie unten ein Kunstwerk aus.</p>
     <nav>
       <ul>
         <li><a href="Werke/werk1.html">Werk 1: "Licht und Schatten"</a></li>
         <li><a href="Werke/werk2.html">Werk 2: "Tiefe Struktur"</a></li>
         <li><a href="Werke/werk3.html">Werk 3: "Stille Resonanz"</a></li>
+        <li><a href="Werke/werk4.html">Werk 4: "Stimmen unter Tage"</a></li>
+        <li><a href="Werke/werk5.html">Werk 5: "Verlorene Muster"</a></li>
+        <li><a href="Werke/werk6.html">Werk 6: "Rostfarben der Zeit"</a></li>
+        <li><a href="Werke/werk7.html">Werk 7: "Linie trifft Fläche"</a></li>
+        <li><a href="Werke/werk8.html">Werk 8: "Echo"</a></li>
+        <li><a href="Werke/werk9.html">Werk 9: "Übergänge"</a></li>
+        <li><a href="Werke/werk10.html">Werk 10: "Stille"</a></li>
       </ul>
     </nav>
   </main>
-
   <footer>
-    <p>&copy; 2025 Bergwerk Steinebach</p>
+    © 2025 Bergwerk Steinebach
   </footer>
 </body>
 </html>
