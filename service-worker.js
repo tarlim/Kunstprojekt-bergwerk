@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kunstprojekt-cache-v1';
+const CACHE_NAME = 'kunstprojekt-cache-v2';
 
 const urlsToCache = [
   '/',
@@ -6,8 +6,7 @@ const urlsToCache = [
   '/manifest.json',
   '/service-worker.js',
   '/icon.png',
-
-  // Werkseiten
+  // Werke
   '/Werke/werk1.html',
   '/Werke/werk2.html',
   '/Werke/werk3.html',
@@ -18,8 +17,7 @@ const urlsToCache = [
   '/Werke/werk8.html',
   '/Werke/werk9.html',
   '/Werke/werk10.html',
-
-  // Bilder zu den Werken
+  // Bilder
   '/Werke/bild1.jpg',
   '/Werke/bild2.jpg',
   '/Werke/bild3.jpg',
@@ -37,8 +35,11 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('📦 Inhalte werden zwischengespeichert...');
+        console.log('📦 Dateien werden gecacht...');
         return cache.addAll(urlsToCache);
+      })
+      .catch(error => {
+        console.error('❌ Fehler beim Caching:', error);
       })
   );
 });
@@ -48,17 +49,22 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
       );
     })
   );
 });
 
-// Abrufen
+// Abrufen von Ressourcen
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => response || fetch(event.request))
+      .then(response => {
+        return response || fetch(event.request);
+      })
+      .catch(error => {
+        console.error('❌ Fehler beim Abrufen:', error);
+        throw error;
+      })
   );
 });
-
