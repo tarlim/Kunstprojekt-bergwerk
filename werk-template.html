@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{WERK_TITEL}}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1em;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #444;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em auto;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 2em;
+      text-align: center;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{WERK_TITEL}}</h1>
+  </header>
+
+  <main>
+    <img src="{{BILD_DATEINAME}}" alt="Bild zu {{WERK_TITEL}}">
+    <p><strong>Künstler:</strong> {{KÜNSTLERNAME}}</p>
+    <p><strong>Jahr:</strong> {{JAHR}}</p>
+    <p><strong>Technik:</strong> {{TECHNIK}}</p>
+    <p><strong>Beschreibung:</strong> {{BESCHREIBUNG}}</p>
+
+    <a href="../index.html" class="back-link">Zurück zur Übersicht</a>
+  </main>
+</body>
+</html>
